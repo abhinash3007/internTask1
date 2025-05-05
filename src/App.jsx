@@ -3,36 +3,40 @@ import {
   TwitterShareButton, TwitterIcon,
   WhatsappShareButton, WhatsappIcon,
   LinkedinShareButton, LinkedinIcon
-} from 'react-share'
-import './App.css'
+} from 'react-share';
+import './App.css';
 
 function App() {
-  const currentUrl = window.location.href; 
-  const imageUrl = `${window.location.origin}/jpeg/foodvilla-4.png`;
-
-  const shareMessage = "Check out this awesome content!";
+  const shareUrl = window.location.href;
+  const title = "FoodVilla - Best Indian Food Online!";
+  const description = "Order from FoodVilla and enjoy delicious Indian cuisine at your doorstep.";
+  const imageUrl = `${window.location.origin}/images/foodvilla-4.png`;
 
   return (
-    <div className='flex flex-col items-center gap-4 p-4'>
-      <h1>Welcome to the website</h1>
-      <imageUrl ></imageUrl>
-      <FacebookShareButton url={currentUrl} quote={shareMessage} hashtag={'#learn'}>
-        <FacebookIcon size={40} round />
-      </FacebookShareButton>
+    <div className='flex flex-col items-center gap-4 p-8'>
+      <h1 className="text-2xl font-bold">FoodVilla</h1>
+      <p className="mb-4 max-w-xl text-center">{description}</p>
+      <img src="/images/foodvilla-4.png" alt="FoodVilla" className="w-96 rounded-lg shadow-lg" />
 
-      <TwitterShareButton url={currentUrl} title={shareMessage}>
-        <TwitterIcon size={40} round />
-      </TwitterShareButton>
+      <div className='flex gap-4 mt-6'>
+        <FacebookShareButton url={shareUrl} quote={`${title}\n\n${description}`} hashtag="#FoodVilla">
+          <FacebookIcon size={48} round />
+        </FacebookShareButton>
 
-      <WhatsappShareButton url={currentUrl} title={shareMessage}>
-        <WhatsappIcon size={40} round />
-      </WhatsappShareButton>
+        <TwitterShareButton url={shareUrl} title={`${title} - ${description}`}>
+          <TwitterIcon size={48} round />
+        </TwitterShareButton>
 
-      <LinkedinShareButton url={currentUrl} title={shareMessage}>
-        <LinkedinIcon size={40} round />
-      </LinkedinShareButton>
+        <WhatsappShareButton url={shareUrl} title={`${title} - ${description}`}>
+          <WhatsappIcon size={48} round />
+        </WhatsappShareButton>
+
+        <LinkedinShareButton url={shareUrl} title={title} summary={description} source="FoodVilla">
+          <LinkedinIcon size={48} round />
+        </LinkedinShareButton>
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
