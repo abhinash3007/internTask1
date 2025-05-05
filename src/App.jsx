@@ -14,7 +14,9 @@ function App() {
 
   return (
     <div className='flex flex-col items-center gap-4 p-4'>
-    <FacebookShareButton url={currentUrl} quote={shareMessage} hashtag={'#learn'}>
+      <h1>Welcome to the website</h1>
+      <imageUrl ></imageUrl>
+      <FacebookShareButton url={currentUrl} quote={shareMessage} hashtag={'#learn'}>
         <FacebookIcon size={40} round />
       </FacebookShareButton>
 
@@ -22,7 +24,7 @@ function App() {
         <TwitterIcon size={40} round />
       </TwitterShareButton>
 
-      <WhatsappShareButton url={imageUrl} title={shareMessage}>
+      <WhatsappShareButton url={currentUrl} title={shareMessage}>
         <WhatsappIcon size={40} round />
       </WhatsappShareButton>
 
