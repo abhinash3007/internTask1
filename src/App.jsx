@@ -16,7 +16,7 @@ function App() {
     <div className='flex flex-col items-center gap-4 p-8'>
       <h1 className="text-2xl font-bold">FoodVilla</h1>
       <p className="mb-4 max-w-xl text-center">{description}</p>
-      <img src="/images/foodvilla-4.png" alt="FoodVilla" className="w-96 rounded-lg shadow-lg" />
+      <img src="/jpeg/foodvilla-4.png" alt="FoodVilla" className="w-96 rounded-lg shadow-lg" />
 
       <div className='flex gap-4 mt-6'>
         <FacebookShareButton url={shareUrl} quote={`${title}\n\n${description}`} hashtag="#FoodVilla">
